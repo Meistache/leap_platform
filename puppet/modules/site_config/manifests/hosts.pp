@@ -10,10 +10,9 @@ class site_config::hosts() {
   } else {
     $dns_aliases = $dns['aliases']
   }
-  $my_hostnames = unique(sort(concat(
-    [$hostname, $domain_hash['full'], $domain_hash['internal']],
-    $dns_aliases
-  )))
+  $my_hostnames = unique(concat(
+    [$domain_hash['full'], $hostname, $domain_hash['internal']], $dns_aliases
+  ))
 
   file { '/etc/hostname':
     ensure  => present,
