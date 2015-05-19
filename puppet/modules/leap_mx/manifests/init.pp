@@ -46,11 +46,12 @@ class leap_mx {
   package {
     'leap-mx':
       ensure  => latest,
-      require => Class['site_apt::preferences::twisted'];
-
+      require => [Class['site_apt::preferences::twisted'], 
+                  Package['leap-keyring']];  
     [ 'leap-keymanager' ]:
-      ensure => latest;
-  }
+      ensure  => latest,
+      require => Package['leap-keyring'];  
+}
 
   #
   # LEAP-MX DAEMON
