@@ -58,4 +58,13 @@ class site_config::remove::tapicero {
       notify  => Exec['check_mk-refresh'];
   }
 
+  # remove couchdb tapicero user
+  exec {
+    "delete_tapicero_user":
+      command => "/usr/local/bin/couch-doc-update --host 127.0.0.1:5984 --db '_users' --id 'org.couchdb.user:tapicero' --delete",
+      refreshonly => false,
+      loglevel => debug,
+      logoutput => on_failure,
+      require => File['/srv/leap/couchdb/designs'];
+  }
 }
