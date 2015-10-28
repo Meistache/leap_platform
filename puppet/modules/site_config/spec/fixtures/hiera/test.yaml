@@ -1,0 +1,81 @@
+---
+domain: ['example.com']
+ip_address: ['192.168.1.1']
+interface: ['eth0']
+environment: ['local']
+ssh: 
+  authorized_keys: 
+    testuser: 
+      key: AAA0DEADBEEF
+      type: ssh-rsa
+  mosh: 
+    enabled: false
+    ports: "60000:61000"
+  config: 
+    AllowTcpForwarding: "no"
+hosts: 
+  testhost: 
+    domain_full: testhost.example.com
+    domain_internal: testhost.example.i
+    host_pub_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQAB9AABAQDKK2s6DWx8ZeEXZVKD7zSQImbZ0w6GzcPm4GHFySr1hnjsAX4QEVelB5tiI74l54noPyaEEKFmkiHkPjXaolQ6LpzJFMN27Ae9fIR+VAD90xIa4aXw+5umTTsm53OuHvLMPeNPom/jP1y1R406zDhZzXsI9mN99xfwyfn3wYKAwO1tu+mxrfKyNJUcXNskf5quVTIn/P8DP628bpVRJsHVtv873x8k6fjI8L1bQDnppskf89aXjSH6Z/guglL+pOL9WfIIggBHAIRUNX01rKqC7UfSiHM/5wP/s5XRxxzloQ5K9pJyI8DKcOeJn9DGgSlIzomXn1KWEIA/BGdUblUf"
+    ip_address: "192.168.1.1"
+    port: 22
+
+domain:
+  full: testhost.example.com
+  full_suffix: example.com
+  internal: testhost.example.i
+  internal_suffix: example.i
+  name: testhost.example.i
+
+contacts: 
+  - root@example.com
+mail: 
+  smarthost: []
+name: unittests
+
+x509: 
+  ca_cert: |
+      -----BEGIN CERTIFICATE-----
+      INVALID DATA
+      -----END CERTIFICATE-----
+  cert: |
+      -----BEGIN CERTIFICATE-----
+      INVALID DATA
+      -----END CERTIFICATE-----
+  client_ca_cert: |
+      -----BEGIN CERTIFICATE-----
+      INVALID DATA
+      -----END CERTIFICATE-----
+  client_ca_key: |
+      -----BEGIN RSA PRIVATE KEY-----
+      INVALID DATA
+      -----END RSA PRIVATE KEY-----
+  commercial_ca_cert: |
+      -----BEGIN CERTIFICATE-----
+      INVALID DATA
+      -----END CERTIFICATE-----
+  commercial_cert: |
+      -----BEGIN CERTIFICATE-----
+      INVALID DATA
+      -----END CERTIFICATE-----
+  commercial_key: |
+      -----BEGIN PRIVATE KEY-----
+      INVALID DATA
+      -----END PRIVATE KEY-----
+  key: |
+      -----BEGIN RSA PRIVATE KEY-----
+      INVALID DATA
+      -----END RSA PRIVATE KEY-----
+
+ssh: 
+  authorized_keys: 
+    adminuser: 
+      key: INVALIDDATA
+    monitor: 
+      key: INVALIDDATA
+  mosh:
+    enabled: false
+  config: 
+    AllowTcpForwarding: "no"
+
